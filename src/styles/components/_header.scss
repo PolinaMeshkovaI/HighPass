@@ -1,0 +1,31 @@
+.header {
+    &__container {
+        @include flex-all-sb;
+        padding-top: 24px;
+        padding-bottom: 20px;
+        background-color: $color-main;
+        color: $color-light;
+    }
+    &__nav {
+        margin-left: -55px;
+    }
+}
+
+.nav {
+    &__list {
+        @include flex-v-center;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 79px;
+        }
+    }
+    &__link {
+        font-family: 'TTFirsNeue';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: $color-light;
+    }
+}
+

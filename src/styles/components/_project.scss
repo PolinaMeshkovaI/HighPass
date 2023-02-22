@@ -1,0 +1,44 @@
+.project {
+    &__container {
+        padding-top: $gap-grid;
+        padding-bottom: $gap;
+        background-color: $color-main;
+    }
+    &__title {
+        margin-bottom: 5px;
+        color: $color-light;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left {
+        width: 50%;
+        margin-right: $gap-grid;
+    }
+    &__descr {
+        width: 100%;
+        color: $color-grey;
+        line-height: 28px;
+    }
+    &__img {
+        margin-bottom: 24px;
+    }
+    &__subtitle {
+        color: $color-light;
+        margin-bottom: 16px;
+    }
+    &__form {
+        @include flex-all-sb;
+    }
+    &__input {
+        display: block;
+        width: 100%;
+        border: none;
+        margin-right: $gap-grid;
+        padding: 15px 23px;
+        max-width: 474px;
+        background-color: $color-input;
+    }
+
+}
