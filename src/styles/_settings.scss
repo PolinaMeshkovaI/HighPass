@@ -86,3 +86,20 @@ body {
     line-height: 22px;
     color: $color-main;
 }
+
+.label {
+    position: absolute;
+    padding: 7px 15px;
+    right: 15px;
+    top: 15px;
+    background-color: $color-main;
+    color: $color-light;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    &--projects {
+        right: 6px;
+        top: 9px;
+    }
+}

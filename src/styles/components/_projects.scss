@@ -1,0 +1,112 @@
+.projects {
+    &__container {
+        padding-top: $gap;
+    }
+    &__title {
+        margin-bottom: 12px;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: $gap-grid;
+    }
+    &__card {
+        position: relative;
+    }
+}
+.card {
+    &__mini {
+        padding-top: 202px;
+        background-repeat: no-repeat;
+        background-size: 100% 185px;
+        background-position: top;
+        &--img1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-image: url(../images/project_1.jpg);
+        }
+        &--img2 {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            background-image: url(../images/project_2.jpg);
+        }
+        &--img3 {
+            grid-column-start: 5;
+            grid-column-end: 7;
+            background-image: url(../images/project_3.jpg);
+        }
+        &--img4 {
+            grid-column-start: 7;
+            grid-column-end: 10;
+            background-image: url(../images/project_6.jpg);
+        }
+        &--img5 {
+            grid-column-start: 10;
+            grid-column-end: 13;
+            background-image: url(../images/project_7.jpg);
+        }
+    }
+    &__maxi {
+        padding: 23px 30px 30px;
+        &--img1 {
+            grid-column-start: 7;
+            grid-column-end: 13;
+            background-image: url(../images/project_4.jpg);
+        }
+        &--img2 {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            background-image: url(../images/project_5.jpg);
+        }
+
+    }
+    &__wrapper {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+    &__box {
+        width: 50%;
+    }
+    &__link::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    &__title {
+        margin-bottom: 6px;
+        line-height: 24px;
+        color: $color-light;
+    }
+    &__descr {
+        margin-bottom: 12px;
+        &--white {
+            color: $color-light;
+        }
+    }
+    &__text {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        color: #999999;
+        &--white {
+            color: $color-light;
+        }
+    }
+    &__btn {
+        display: block;
+        background-color: transparent;
+        border: 2px solid $color-pimary;
+    }
+    &__icon {
+        display: inline-block;
+    }
+}

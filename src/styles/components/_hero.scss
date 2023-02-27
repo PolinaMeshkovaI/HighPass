@@ -8,6 +8,7 @@
         
     }
     &__left {
+        position: relative;
         display: flex;
         align-items:flex-end;
         width: 50%;
@@ -25,7 +26,7 @@
 }
 
 .left {
-    &__wrapper{
+    &__wrapper {
         @include flex-column-start();
         padding-left: 60px;
         padding-bottom: 60px;
