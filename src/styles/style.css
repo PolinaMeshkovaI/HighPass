@@ -96,6 +96,18 @@ body {
   color: #fff;
   padding: 15px 22px;
   text-decoration: none;
+  -webkit-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.btn:focus {
+  background-color: #ce4307;
+}
+.btn:hover {
+  background-color: #bc572b;
+}
+.btn:active {
+  background-color: #ff6e30;
+  border: 2px solid #ce4307;
 }
 
 .title {
@@ -141,6 +153,11 @@ body {
   top: 9px;
 }
 
+[class*=ground-pane] {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
 .header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,10 +189,23 @@ body {
   margin-right: 79px;
 }
 .nav__link {
+  padding: 3px;
   font-family: "TTFirsNeue";
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
+  color: #fff;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.nav__link:focus {
+  color: #ce4307;
+}
+.nav__link:hover {
+  color: #ff6e30;
+}
+.nav__link:active {
+  background-color: #ce4307;
   color: #fff;
 }
 
@@ -436,7 +466,185 @@ body {
   display: block;
   background-color: transparent;
   border: 2px solid #ff6e30;
+  -webkit-transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.card__btn:focus {
+  background-color: #ce4307;
+  border-color: #ce4307;
+}
+.card__btn:hover {
+  background-color: #ff6e30;
+}
+.card__btn:active {
+  background-color: #bc572b;
+  border-color: #ff6e30;
 }
 .card__icon {
   display: inline-block;
+}
+
+.contacts__container {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+.contacts__titile {
+  margin-bottom: 13px;
+}
+.contacts__wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+.contacts__map {
+  position: relative;
+  margin-top: 8px;
+  width: 850px;
+  height: 460px;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+.contacts__box {
+  position: absolute;
+  height: 460px;
+  width: 410px;
+  margin-top: 8px;
+  padding-top: 175px;
+  padding-left: 60px;
+  padding-right: 50px;
+  z-index: 5;
+  background: rgba(32, 32, 32, 0.85);
+}
+.contacts__right {
+  grid-column-start: 9;
+  grid-column-end: 13;
+}
+.contacts__subtitle {
+  margin-bottom: 5px;
+}
+.contacts__descr {
+  margin-bottom: 14px;
+  color: #999;
+}
+.contacts__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box__title {
+  margin-bottom: 5px;
+  color: #fff;
+}
+.box__addres {
+  display: block;
+  line-height: 28px;
+  color: #cacaca;
+}
+.box__img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.box__tel {
+  vertical-align: middle;
+  font-family: "TTFirsNeue";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ff6e30;
+}
+.box__btn {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+}
+
+.form__input {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  padding: 16px 23px;
+  background-color: #e9e9e9;
+  color: #999;
+}
+.form__textarea {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  border: none;
+  padding: 16px 23px;
+  background-color: #e9e9e9;
+  color: #999;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  background-color: #202020;
+  color: #fff;
+}
+.footer__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.footer__text {
+  margin-bottom: 6px;
+  font-family: "TTFirsNeue";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #e9e9e9;
+}
+.footer__center {
+  max-width: 361px;
+  margin-left: -123px;
+}
+.footer__quote {
+  color: #cacaca;
+}
+.footer__descr {
+  margin-bottom: 8px;
+  color: #cacaca;
+}
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footer__social--ok {
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */

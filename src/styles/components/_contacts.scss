@@ -1,0 +1,99 @@
+.contacts {
+    &__container {
+        padding-top: $gap;
+        padding-bottom: $gap;
+    }
+    &__titile {
+        margin-bottom: 13px;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: $gap-grid;
+    }
+    &__map {
+        position: relative;
+        margin-top: 8px;
+        width: 850px;
+        height: 460px;
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+    &__box {
+        position: absolute;
+        height: 460px;
+        width: 410px;
+        margin-top: 8px;
+        padding-top: 175px;
+        padding-left: 60px;
+        padding-right: 50px;
+        z-index: 5;
+        background: rgba(32, 32, 32, 0.85);
+    }
+    &__right {
+        grid-column-start: 9;
+        grid-column-end: 13;
+    }
+    &__subtitle {
+        margin-bottom: 5px;
+    }
+    &__descr {
+        margin-bottom: 14px;
+        color: $color-grey-input;
+    }
+    &__form {
+       @include flex-column-start;
+       justify-content: space-between;
+    
+    }
+}
+
+.box {
+    &__title {
+        margin-bottom: 5px;
+        color: $color-light;
+    }
+    &__addres {
+        display: block;
+        line-height: 28px;
+        color: $color-grey;
+    }
+    &__img {
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+    }
+    &__tel {
+        vertical-align: middle;
+        font-family: 'TTFirsNeue';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: $color-pimary;
+    }
+    &__btn {
+        position: absolute;
+        top: 19px;
+        right: 19px;
+    }
+}
+
+.form {
+    &__input {
+        width: 100%;
+        margin-bottom: 20px;
+        border: none;
+        padding: 16px 23px;
+        background-color: $color-bg-input;
+        color: $color-grey-input;
+    }
+    &__textarea {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+        border: none;
+        padding: 16px 23px;
+        background-color: $color-bg-input;
+        color: $color-grey-input;
+    }
+}

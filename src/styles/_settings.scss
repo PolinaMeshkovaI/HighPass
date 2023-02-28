@@ -59,6 +59,17 @@ body {
     color: $color-light;
     padding: 15px 22px; 
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    &:focus {
+        background-color: $color-pimary-medium;
+    }
+    &:hover {
+        background-color: $color-pimary-dark;
+    }
+    &:active {
+        background-color: $color-pimary;
+        border: 2px solid $color-pimary-medium;
+    }
 }
 
 .title {
@@ -102,4 +113,8 @@ body {
         right: 6px;
         top: 9px;
     }
+}
+
+[class*='ground-pane'] {
+    filter: grayscale(1);
 }

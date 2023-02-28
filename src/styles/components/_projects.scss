@@ -105,7 +105,20 @@
         display: block;
         background-color: transparent;
         border: 2px solid $color-pimary;
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        &:focus {
+            background-color: $color-pimary-medium;
+            border-color: $color-pimary-medium;
+        }
+        &:hover {
+            background-color: $color-pimary;
+        }
+        &:active {
+            background-color: $color-pimary-dark;
+            border-color: $color-pimary;
+        }
     }
+
     &__icon {
         display: inline-block;
     }
