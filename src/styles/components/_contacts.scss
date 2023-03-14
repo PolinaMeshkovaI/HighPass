@@ -14,8 +14,7 @@
     &__map {
         position: relative;
         margin-top: 8px;
-        width: 850px;
-        height: 460px;
+        width: 100%;
         grid-column-start: 1;
         grid-column-end: 9;
     }
@@ -29,6 +28,9 @@
         padding-right: 50px;
         z-index: 5;
         background: rgba(32, 32, 32, 0.85);
+        &--close {
+            display: none;
+        }
     }
     &__right {
         grid-column-start: 9;
@@ -62,8 +64,22 @@
         width: 22px;
         height: 22px;
         vertical-align: middle;
+        &--close {
+            fill: $color-grey-input;
+            transition: fill 0.3s ease-in-out;
+            &:focus {
+                fill: $color-pimary-dark;
+            }
+            &:hover {
+                fill: $color-pimary;
+            }
+            &:active {
+                fill: $color-pimary-medium;
+            }
+        }
     }
     &__tel {
+        white-space: nowrap;
         vertical-align: middle;
         font-family: 'TTFirsNeue';
         font-weight: 400;
@@ -79,13 +95,39 @@
 }
 
 .form {
+    &__input-wrapper {
+        position: relative;
+        width: 100%;
+    }
     &__input {
         width: 100%;
         margin-bottom: 20px;
         border: none;
         padding: 16px 23px;
         background-color: $color-bg-input;
-        color: $color-grey-input;
+        // color: $color-grey-input;
+        color: $color-main !important;
+        &::placeholder {
+            color: $color-grey-input;
+            opacity: 1;
+            transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        &:focus::placeholder  {
+            color: $color-grey;
+        }
+        &:focus-visible  {
+            color: $color-grey;
+            outline: 1px solid $color-pimary;
+        }
+        &:hover::placeholder {
+           color: $color-pimary;
+        }
+        &:active  {
+            outline: 1px solid $color-pimary;   
+        }
+        &:active::placeholder  {
+            color: $color-grey;
+        }
     }
     &__textarea {
         width: 100%;
@@ -95,5 +137,38 @@
         padding: 16px 23px;
         background-color: $color-bg-input;
         color: $color-grey-input;
+        &::placeholder {
+            color: $color-grey-input;
+            opacity: 1;
+            transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        &:focus::placeholder  {
+            color: $color-grey;
+        }
+        &:focus-visible  {
+            color: $color-grey;
+            outline: 1px solid $color-pimary;
+        }
+        &:hover::placeholder {
+           color: $color-pimary;
+        }
+        &:active  {
+            outline: 1px solid $color-pimary;
+        }
+        &:active::placeholder  {
+            color: $color-grey;
+        }
     }
+}
+.invalid-contacts {
+    outline: 1px solid $color-error-input;
+}
+.contacts-error-label {
+    position: absolute;
+    top: 3px;
+    left: 23px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
 }

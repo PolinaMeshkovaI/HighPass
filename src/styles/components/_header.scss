@@ -1,27 +1,69 @@
 .header {
     &__container {
-        @include flex-all-sb;
+        position: relative;
         padding-top: 24px;
         padding-bottom: 20px;
         background-color: $color-main;
         color: $color-light;
+        &--top {
+            display: none;
+        }
+        &--bottom {
+            display: none;
+        }
+    }
+    &__wrapper {
+        @include flex-all-sb;
+        &--768 {
+            display: none;
+        }
     }
     &__nav {
         margin-left: -55px;
     }
+    &__btn svg {
+        fill: $color-light;
+        transition: fill 0.3s ease-in-out;
+        &:focus {
+            fill: $color-pimary-dark;
+        }
+        &:hover {
+            fill: $color-pimary;
+        }
+        &:active {
+            fill: $color-pimary-medium;
+        }
+    }
+    &__search {
+        position: absolute;
+        display: none;
+        width: 383px;
+        padding-left: 15px;
+        justify-content: space-between;
+        z-index: 10;
+        right: 315px;
+        top: 26px;
+        background-color: $color-main;
+        &--active {
+            display: flex;
+        }
+    }
 }
 
 .nav {
+    &__close {
+        display: none;
+    }
     &__list {
         @include flex-v-center;
     }
     &__item {
         &:not(:last-child) {
-            margin-right: 79px;
+            margin-right: 71px;
         }
     }
     &__link {
-        padding: 3px;
+        // padding: 3px;
         font-family: 'TTFirsNeue';
         font-weight: 400;
         font-size: 16px;
@@ -37,6 +79,66 @@
         &:active {
             background-color: $color-pimary-medium;
             color: $color-light;
+        }
+    }
+}
+
+.search {
+    &__input {
+        width: 308px;
+        padding-top: 5px;
+        padding-bottom: 4px;
+        font-family: "TTFirsNeue";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        background-color: $color-main;
+        border: none;
+        border-bottom: 1px solid $color-light;
+        color: $color-light;
+        transition: border-bottom 0.3s ease-in-out;
+        &::placeholder {
+            color: $color-light;
+        }
+        &:focus-visible  {
+            border-bottom: 1px solid $color-pimary;
+            outline: none;
+        }
+        &:hover {
+            border-bottom: 1px solid $color-pimary;
+            outline: none;
+        }
+        &:active  {
+            border-bottom: 1px solid $color-pimary-dark;
+            outline: none;
+        }
+    }
+    &__btn svg {
+        fill: $color-light;
+        transition: fill 0.3s ease-in-out;
+        &:focus {
+            fill: $color-pimary-dark;
+        }
+        &:hover {
+            fill: $color-pimary;
+        }
+        &:active {
+            fill: $color-pimary-medium;
+        }
+    }
+    &__close {
+        &--img {
+            fill: $color-grey-input;
+            transition: fill 0.3s ease-in-out;
+            &:focus {
+                fill: $color-pimary-dark;
+            }
+            &:hover {
+                fill: $color-pimary;
+            }
+            &:active {
+                fill: $color-pimary-medium;
+            }
         }
     }
 }

@@ -16,6 +16,9 @@
         width: 50%;
         margin-right: $gap-grid;
     }
+    &__right {
+        width: 50%;
+    }
     &__descr {
         width: 100%;
         color: $color-grey;
@@ -30,6 +33,7 @@
     }
     &__form {
         @include flex-all-sb;
+        position: relative;
     }
     &__input {
         display: block;
@@ -38,7 +42,41 @@
         margin-right: $gap-grid;
         padding: 15px 23px;
         max-width: 474px;
+        color: $color-light !important;
         background-color: $color-input;
+        &::placeholder {
+            color: $color-grey;
+            opacity: 1;
+            transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        &:focus::placeholder  {
+            color: $color-grey;
+        }
+        &:focus-visible  {
+            color: $color-grey;
+            outline: 1px solid $color-pimary;
+        }
+        &:hover::placeholder {
+           color: $color-pimary;
+        }
+        &:active  {
+            outline: 1px solid $color-pimary;
+        }
+        &:active::placeholder  {
+            color: $color-grey;
+        }
     }
+}
+.invalid {
+    outline: 1px solid $color-error;
+}
 
+.about-us-error-label {
+    position: absolute;
+    top: 3px;
+    left: 23px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
 }

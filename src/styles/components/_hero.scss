@@ -30,7 +30,7 @@
         @include flex-column-start();
         padding-left: 60px;
         padding-bottom: 60px;
-        width: 80%;
+        width: 100%;
     }
     &__title {
         margin: 0;
@@ -57,12 +57,11 @@
         max-height: 587px;
         gap: $gap-grid;
         grid-template-columns: repeat(2, 1fr);
-        background-color: red;
     }
     &__title {
         display: inline-block;
         margin: 0;
-        padding-bottom: 18px;
+        margin-bottom: 18px;
         font-family: 'TTFirsNeue';
         font-weight: 700;
         font-size: 24px;

@@ -98,21 +98,21 @@ const svgSprites = () => {
         .pipe(dest('dist/images'))
 }
 
-const scripts = () => {
-    return src([
-        'src/js/components/**/*.js',
-        'src/js/main.js'
-    ])
-        .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(concat('app.js'))
-        .pipe(uglify().on('error', notify.onError()))
-        .pipe(sourcemaps.write())
-        .pipe(dest('dist'))
-        .pipe(browserSync.stream())
-}
+// const scripts = () => {
+//     return src([
+//         'src/js/components/**/*.js',
+//         'src/js/main.js'
+//     ])
+//         .pipe(sourcemaps.init())
+//         .pipe(babel({
+//             presets: ['@babel/env']
+//         }))
+//         .pipe(concat('app.js'))
+//         .pipe(uglify().on('error', notify.onError()))
+//         .pipe(sourcemaps.write())
+//         .pipe(dest('dist'))
+//         .pipe(browserSync.stream())
+// }
 
 const scriptsBuild = () => {
     return src([
@@ -125,6 +125,25 @@ const scriptsBuild = () => {
         .pipe(concat('app.js'))
         .pipe(uglify().on('error', notify.onError()))
         .pipe(dest('dist'))
+}
+const scripts = () => {
+	src('./src/js/vendor/**.js')
+		.pipe(concat('vendor.js'))
+		// .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
+		.pipe(dest('./app/js/'))
+  return src(
+    ['./src/js/script.js', './src/js/components/**.js', './src/js/main.js'])
+    .pipe(sourcemaps.init())
+    // .pipe(gulpif(!isProd, sourcemaps.init()))
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
+    .pipe(concat('main.js'))
+    // .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
+    // .pipe(gulpif(!isProd, sourcemaps.write('.')))
+    .pipe(sourcemaps.write())
+    .pipe(dest('./app/js'))
+    .pipe(browserSync.stream());
 }
 
 const watchFiles = () => {

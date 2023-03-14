@@ -32,9 +32,25 @@
     }
     &__social {
         @include flex-all-center;
-        &--ok {
-            margin-right: 20px;
+        
+    }
+}
+.social {
+    &__link svg {
+        fill: $color-grey;
+        transition: fill 0.3s ease-in-out;
+        &:focus {
+            fill: $color-pimary-dark;
+        }
+        &:hover {
+            fill: $color-pimary;
+        }
+        &:active {
+            fill: $color-pimary-medium;
         }
     }
-
+    &--ok {
+        margin-right: 20px;
+    }
+    
 }
