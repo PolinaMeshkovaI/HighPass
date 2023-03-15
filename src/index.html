@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,10 @@
     <title>High Pass</title>
 
     <link rel="icon" href="./resources/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- endbuild -->
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
     </script>
@@ -29,7 +31,7 @@
                     </svg>
                 </button>
                 <button class="search__close btn-reset">
-                    <svg alt="Кнопка закрытия строки поиска" class="search__close--img" width="24" height="24">    
+                    <svg aria-label="Кнопка закрытия строки поиска" class="search__close search__close--img" width="24" height="24">    
                         <use xlink:href="#close"></use>
                     </svg>
                 </button>
@@ -69,13 +71,13 @@
                 </button>     
             </div>
         </div>
-        <div class="container header__container--bottom">
+        <div class="container header__container header__container--bottom">
             <button class="header__burger burger btn-reset" aria-label="Навигация по сайту">
                 <span class="burger__line"></span>
             </button>
             <nav class="nav header__nav header__nav--768">
                 <button class="nav__close btn-reset">
-                    <svg alt="Кнопка закрытия строки поиска" class="search__close--img" width="24" height="24">    
+                    <svg aria-label="Кнопка закрытия строки поиска" class="nav__close nav__close--img" width="24" height="24">    
                         <use xlink:href="#close"></use>
                     </svg>
                 </button>
@@ -285,7 +287,7 @@
                             #ретушь
                         </div>
                         <div class="card__wrapper">
-                            <p class="card__descr descr">
+                            <p class="card__descr card__descr--middle descr">
                                 <a class="card__link" href="#">Как принято считать, многие известные личности и&nbsp;по&nbsp;сей день остаются уделом либералов...</a>
                             </p>
                             <div class="card__date">
@@ -301,10 +303,10 @@
                             #портрет
                         </div>
                         <div class="card__wrapper">
-                            <p class="card__descr descr">
+                            <p class="card__descr card__descr--middle descr">
                                 <a class="card__link" href="#">С&nbsp;учётом сложившейся международной обстановки, новая модель организационной...</a>
                             </p>
-                            <div class="crad_date">
+                            <div class="card__date">
                                 <img class="card__icon" src="./images/calendar.svg" alt="Иконка календаря">
                                 <span class="card__text descr">
                                     1&nbsp;марта
@@ -322,12 +324,12 @@
                     <div class="contacts__map" id="map">
                         <div class="contacts__box box">
                             <button class="btn-reset box__btn">
-                                <svg alt="Кнопка закрытия окна с адресом" class="box__img--close" width="20" height="20">    
+                                <svg aria-label="Кнопка закрытия окна с адресом" class="box__img box__img--close" width="20" height="20">    
                                     <use xlink:href="#close"></use>
                                 </svg>
                             </button>
                             <h3 class="subtitle box__title">Студия &laquo;High pass&raquo;</h3>
-                            <addres class="descr box__addres">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82  </addres>
+                            <div class="descr box__addres">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82  </div>
                             <a class="box__tel" href="tel:+749542423532"><img class="box__img" src="./images/mdi_call.svg" alt="Иконка телефона">+7&nbsp;495&nbsp;424-23-532</a>
                         </div>
                     </div>
@@ -380,14 +382,14 @@
                     Больше интересного:
                 </p>
                 <ul class="footer__social social list-reset">
-                    <li class="social--ok">
+                    <li class="social social--ok">
                         <a class="social__link" href="#">
                             <svg width="30" height="30">
                                 <use xlink:href="#ok"></use>
                             </svg>
                         </a>
                     </li>
-                    <li class="social--vk">
+                    <li class="social social--vk">
                         <a class="social__link" href="#">
                             <svg width="30" height="30">
                                 <use xlink:href="#vk"></use>
@@ -398,13 +400,16 @@
             </div>
         </div>
     </footer>
+    <!-- build:js js/main.js -->
     <script defer src="js/main.js"></script>
     <script defer src="js/components/search.js"></script>
     <script defer src="js/components/address_close.js"></script>
     <script defer src="js/components/burger.js"></script>
+    <script defer src="js/components/validation.js"></script>
+    <!-- endbuild -->
     
 
-    <script defer type="text/javascript">
+    <script type="text/javascript">
         ymaps.ready(init);
         function init(){
             var myMap = new ymaps.Map("map", {
@@ -418,6 +423,7 @@
             });
 
             myPlacemark.events.add('click', function (e) {
+                let addressBox = document.querySelector('.contacts__box');
                 addressBox.classList.remove('contacts__box--close')
             });
             

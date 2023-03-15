@@ -49,17 +49,29 @@
         }
     }
 }
-
 .nav {
     &__close {
         display: none;
+        &--img {
+            fill: $color-grey-input;
+            transition: fill 0.3s ease-in-out;
+            &:focus {
+                fill: $color-pimary-dark;
+            }
+            &:hover {
+                fill: $color-pimary;
+            }
+            &:active {
+                fill: $color-pimary-medium;
+            }
+        }
     }
     &__list {
         @include flex-v-center;
     }
     &__item {
         &:not(:last-child) {
-            margin-right: 71px;
+            margin-right: 80px;
         }
     }
     &__link {
@@ -82,7 +94,6 @@
         }
     }
 }
-
 .search {
     &__input {
         width: 308px;

@@ -17,7 +17,7 @@
     }
     .nav {
         &__item:not(:last-child) {
-            margin-right: 27px;
+            margin-right: 34px;
         }
     }
     .left {
@@ -34,7 +34,8 @@
     }
     .hero {
         &__container {
-            padding-top: 35px;
+            padding-top: 36px;
+            padding-bottom: 64px;
         }
         &__left {
             background-image: url(../images/foto1_1024.jpg);
@@ -47,18 +48,21 @@
     }
     .about-us {
         &__container {
-            padding-top: 27px;
+            padding-top: 30px;
             padding-bottom: 83px;   
         }
+        &__title {
+            margin-bottom: 2px;
+        }
         &__img {
-            margin-bottom: 17px;
+            margin-bottom: 20px;
         }
         &__form {
             flex-direction: column;
             align-items: start;
         }
         &__input {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             width: 73%;
         }
     }
@@ -169,6 +173,8 @@
             &--bottom {
                 display: block;
                 background: $color-input;
+                padding-top: 0;
+                padding-bottom: 0;
             }
         }
         &__inner {
@@ -224,7 +230,7 @@
     }
     .about-us {
         &__container {
-            padding-bottom: 60px;
+            padding-bottom: 65px;
         }
         &__input {
             width: 100%;
@@ -273,6 +279,9 @@
             &--clamp {
                 display: block;
             }
+            &--middle {
+                margin-bottom: 21px;
+            }
         }
         &__box {
             width: 45%;
@@ -280,7 +289,7 @@
     }
     .contacts {
         &__container {
-            padding-top: 74px;
+            padding-top: 66px;
         }
         &__wrapper {
             grid-template-columns: repeat(6, 1fr);
@@ -335,6 +344,8 @@
             padding-bottom: 21px;
             &--bottom {
                 height: 45px;
+                padding-top: 0;
+                padding-bottom: 0;
             }
         }
         &__btn svg {
@@ -345,7 +356,7 @@
             display: block;
             position: relative;
             width: 20px;
-            height: 16px;
+            height: 20px;
             z-index: 10;
             transition: transform 0.3s ease-in-out;
         }
@@ -496,6 +507,7 @@
     .about-us {
         &__container {
             padding-top: 32px;
+            padding-bottom: 58px;
         }
         &__wrapper {
             flex-direction: column;

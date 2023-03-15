@@ -15,6 +15,7 @@ const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const useref = require('gulp-useref');
 
 const clean = () => {
     return del(['dist'])
@@ -79,12 +80,15 @@ const stylesBuild = () => {
 
 const htmlMinify = () => {
     return src('src/**/*.html')
-        .pipe(htmlMin({
-            collapseWhitespace: true,
-        }))
-        .pipe(dest('dist'))
-        .pipe(browserSync.stream())
-}
+      .pipe(useref())
+      .pipe(
+        htmlMin({
+          collapseWhitespace: true,
+        })
+      )
+      .pipe(dest('dist'))
+      .pipe(browserSync.stream());
+  };
 
 const svgSprites = () => {
     return src('src/images/svg/**/*.svg')
@@ -130,9 +134,9 @@ const scripts = () => {
 	src('./src/js/vendor/**.js')
 		.pipe(concat('vendor.js'))
 		// .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
-		.pipe(dest('./app/js/'))
+		.pipe(dest('dist/js/'))
   return src(
-    ['./src/js/script.js', './src/js/components/**.js', './src/js/main.js'])
+    ['./src/js/components/**.js', './src/js/main.js'])
     .pipe(sourcemaps.init())
     // .pipe(gulpif(!isProd, sourcemaps.init()))
 		.pipe(babel({
@@ -142,7 +146,7 @@ const scripts = () => {
     // .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
     // .pipe(gulpif(!isProd, sourcemaps.write('.')))
     .pipe(sourcemaps.write())
-    .pipe(dest('./app/js'))
+    .pipe(dest('dist/js'))
     .pipe(browserSync.stream());
 }
 
