@@ -15,6 +15,48 @@
     }
 }
 .card {
+    &--img1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &--img2 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &--img3 {
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &--img4 {
+        grid-column-start: 7;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    &--img5 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    &--img6 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 2;
+        grid-row-end: 3
+    }
+    &--img7 {
+        grid-column-start: 10;
+        grid-column-end: 13;
+        grid-row-start: 2;
+        grid-row-end: 3
+    }
     &__mini {
         position: relative;
         height: 100%;
@@ -30,59 +72,43 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            
-            // background-repeat: no-repeat;
-            // background-position: top;
         }
         &--img1 {
-            grid-column-start: 1;
-            grid-column-end: 3;
             &::before {
                 background-image: url(../images/project_1.jpg);
             }
         }
         &--img2 {
-            grid-column-start: 3;
-            grid-column-end: 5;
             &::before {
                 background-image: url(../images/project_2.jpg);
             }
         }
         &--img3 {
-            grid-column-start: 5;
-            grid-column-end: 7;
             &::before {
                 background-image: url(../images/project_3.jpg);
             }
         }
         &--img4 {
-            grid-column-start: 7;
-            grid-column-end: 10;
             &::before {
                 background-image: url(../images/project_6.jpg);
             }
         }
         &--img5 {
-            grid-column-start: 10;
-            grid-column-end: 13;
             &::before {
                 background-image: url(../images/project_7.jpg);
             }
         }
     }
     &__maxi {
+        height: 100%;
         padding: 23px 30px 30px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         &--img1 {
-            grid-column-start: 7;
-            grid-column-end: 13;
             background-image: url(../images/project_4.jpg);
         }
         &--img2 {
-            grid-column-start: 1;
-            grid-column-end: 7;
             background-image: url(../images/project_5.jpg);
         }
 

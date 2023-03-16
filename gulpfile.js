@@ -32,6 +32,7 @@ const images = () => {
         'src/images/**/*.png',
         'src/images/**/*.jpeg',
         'src/images/*.svg',
+        'src/images/*.ico',
     ])
         .pipe(image())
         .pipe(dest('dist/images'))
